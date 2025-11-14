@@ -1,157 +1,166 @@
-EEG-Based Emotion Recognition Using Random Forest and XGBoost
+# **EEG-Based Emotion Recognition Using Random Forest and XGBoost**
 
-This project implements a full EEG-based emotion recognition system using classical ensemble machine learning techniques. The goal is to classify emotional states—Negative, Neutral, Positive—using 510 selected EEG statistical, spectral, wavelet, covariance, and correlation-based features. The dataset consists of 2132 samples and originally 2549 extracted features, which were reduced for improved model efficiency and reliability. The system achieves high predictive performance using Random Forest and XGBoost models, making it suitable for Pattern Recognition coursework and research applications.
+This project presents a complete machine learning pipeline for classifying emotional states from EEG (Electroencephalography) signals using ensemble algorithms. EEG signals contain rich temporal, spectral, and spatial features reflecting underlying cognitive and affective states. By leveraging a curated set of 510 meaningful EEG-derived features and applying robust ensemble learning methods—Random Forest and XGBoost—this system achieves highly accurate emotion classification. The project is designed for academic research, pattern recognition coursework, and EEG-based affective computing applications.
 
-Key Features
+---
 
-EEG emotion classification using machine learning
+## **📌 Overview**
 
-Two state-of-the-art ensemble models:
+* Dataset: **2132 EEG samples**
+* Extracted Features: **2549**, reduced to **510 selected features**
+* Emotion Labels: **Negative (0), Neutral (1), Positive (2)**
+* Machine Learning Models:
 
-Random Forest: 98.59% accuracy
+  * **Random Forest – 98.59% accuracy**
+  * **XGBoost – 99.22% accuracy**
 
-XGBoost: 99.22% accuracy
+The system includes preprocessing, label encoding, feature selection, model training, confusion matrix generation, and feature importance visualization. The script is fully automated and accepts any compatible EEG CSV file.
 
-Handles any EEG feature CSV file with the same structure
+---
 
-Auto-generates:
+## **📁 Project Structure**
 
-Confusion matrices
+```
+├── pr.py                      # Main Python script
+├── dataset/                   # EEG dataset (samples & features)
+├── results/                   # Confusion matrices + importance plots
+├── requirements.txt           # Python dependencies
+└── README.md                  # Project documentation
+```
 
-Feature importance graphs
+---
 
-Accuracy comparison
+## **✨ Features**
 
-Fully reproducible Python pipeline
+* Fully automated machine learning workflow
+* Works with any EEG feature CSV (same format)
+* Stratified train-test split
+* High-performance ensemble models
+* Confusion matrix visualizations
+* Feature importance ranking
+* Reproducible and optimized code
 
-No manual intervention required
+---
 
-Project Structure
-├── pr.py             
-├── dataset/          
-├── results/          
-├── README.md         
-└── requirements.txt  
+## **📊 Dataset Description**
 
-Dataset Information
+The dataset includes:
 
-2132 total samples
+* **2132 EEG recordings**
+* **2549 engineered features** extracted from:
 
-2549 raw features, reduced to 510 selected features
+  * FFT spectral peaks
+  * Time-domain statistics
+  * Wavelet decompositions
+  * Covariance matrices
+  * Correlation & signal connectivity metrics
 
-Feature categories include:
+After filtering redundant or low-variance features, **510 high-quality features** were retained for modeling.
 
-FFT spectral power
+---
 
-Time-domain statistics
-
-Wavelet energy features
-
-Covariance matrices
-
-Correlation metrics
-
-Emotion labels:
-
-0 = Negative
-
-1 = Neutral
-
-2 = Positive
-
-Installation
+## **⚙️ Installation**
 
 Clone the repository:
 
+```bash
 git clone https://github.com/yourusername/EEG-Emotion-Recognition.git
 cd EEG-Emotion-Recognition
+```
 
+Install Python dependencies:
 
-Install dependencies:
-
+```bash
 pip install -r requirements.txt
+```
 
-How to Run
+---
 
-Execute the main script:
+## **▶️ Usage**
 
+Run the main script:
+
+```bash
 python pr.py
+```
 
+The script will automatically:
 
-The script automatically:
+1. Load the EEG dataset
+2. Encode labels
+3. Select 510 features
+4. Train Random Forest & XGBoost models
+5. Compute accuracy and classification reports
+6. Generate:
 
-Loads and encodes the dataset
+   * Confusion matrices
+   * Feature importance graphs
+7. Save all results in the `results/` folder
 
-Selects 510 features
+---
 
-Trains Random Forest and XGBoost
+## **🏆 Model Performance**
 
-Generates confusion matrices
+### **Random Forest**
 
-Saves feature importance plots
+* Accuracy: **98.59%**
 
-Prints accuracy and model comparison
+### **XGBoost**
 
-Results
-Model	Accuracy
-Random Forest	98.59%
-XGBoost	99.22%
+* Accuracy: **99.22%**
+* Best overall performer
 
-XGBoost gives the best performance
+Key findings:
 
-Covariance and FFT-based features show highest influence
+* Covariance features and FFT spectral bins are the strongest discriminators
+* Ensemble models handle high-dimensional EEG signals effectively
+* XGBoost provides superior class separation and generalization
 
-Generated Outputs
+---
 
-Located in the results/ folder:
+## **📍 Results (Generated Automatically)**
 
-Confusion_Matrix_RF.png
+* `Confusion_Matrix_RF.png`
+* `Confusion_Matrix_XGB.png`
+* `RandomForest-Feature-Importance.png`
+* `XGBoost-Feature-Importance.png`
 
-Confusion_Matrix_XGB.png
+---
 
-RandomForest-Feature-Importance.png
+## **🧠 Technologies Used**
 
-XGBoost-Feature-Importance.png
+* Python 3
+* NumPy
+* Pandas
+* Scikit-Learn
+* XGBoost
+* Matplotlib
+* Seaborn
 
-Technologies Used
+---
 
-Python 3
+## **👨‍💻 Contributors**
 
-NumPy
+### **Akash A.**
 
-Pandas
+* Preprocessing, feature selection
+* Model implementation (RF & XGB)
+* Visualization & evaluation
+* Wrote Methodology, Results, Discussion
+* Organized Python workflow
 
-Scikit-Learn
+### **Sujan A.**
 
-XGBoost
+* Literature review
+* Introduction & Related Work writing
+* Helped interpret model performance
+* Final report structuring & editing
 
-Matplotlib
+---
 
-Seaborn
+## **📄 License**
 
-Contributors
-Akash A.
+This project is created for academic and research use under the **Pattern Recognition** course at **IIIT Sri City**.
 
-Preprocessing & label encoding
+---
 
-Feature selection
-
-RF & XGB model development
-
-Confusion matrices and plots
-
-Methodology, Results, Discussion writing
-
-Sujan A.
-
-Literature review and related work
-
-Introduction writing
-
-Result interpretation
-
-Final report structuring and formatting
-
-License
-
-For academic and research use under the Pattern Recognition course.
