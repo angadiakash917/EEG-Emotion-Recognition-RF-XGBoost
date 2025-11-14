@@ -1,0 +1,54 @@
+PS C:\CP> & "C:/Program Files/Python313/python.exe" c:/CP/pr.py
+Dataset shape: (2132, 2549)
+Columns: ['# mean_0_a', 'mean_1_a', 'mean_2_a', 'mean_3_a', 'mean_4_a', 'mean_d_0_a', 'mean_d_1_a', 'mean_d_2_a', 'mean_d_3_a', 'mean_d_4_a'] ...
+
+c:\CP\pr.py:29: FutureWarning: Downcasting behavior in `replace` is deprecated and will be removed in a future version. To retain the old behavior, explicitly call `result.infer_objects(copy=False)`. To opt-in to the future behavior, set `pd.set_option('future.no_silent_downcasting', True)`
+  data['label'] = data['label'].replace(label_mapping)
+Label distribution:
+ label
+1    716
+0    708
+2    708
+Name: count, dtype: int64
+
+Selected 510 features + label column.
+
+Training samples: 1492  |  Testing samples: 640
+
+✅ Random Forest Accuracy: 98.59%
+
+Random Forest Classification Report:
+
+              precision    recall  f1-score   support
+
+    NEGATIVE       0.98      1.00      0.99       213
+     NEUTRAL       1.00      0.99      0.99       215
+    POSITIVE       0.98      0.98      0.98       212
+
+    accuracy                           0.99       640
+   macro avg       0.99      0.99      0.99       640
+weighted avg       0.99      0.99      0.99       640
+
+
+✅ XGBoost Accuracy: 99.22%
+
+XGBoost Classification Report:
+
+              precision    recall  f1-score   support
+
+    NEGATIVE       0.99      1.00      0.99       213
+     NEUTRAL       1.00      1.00      1.00       215
+    POSITIVE       0.99      0.99      0.99       212
+
+    accuracy                           0.99       640
+   macro avg       0.99      0.99      0.99       640
+weighted avg       0.99      0.99      0.99       640
+
+
+============================
+Model Performance Comparison
+============================
+Random Forest Accuracy: 98.59%
+XGBoost Accuracy:      99.22%
+
+🏆 Best Performing Model: XGBoost
